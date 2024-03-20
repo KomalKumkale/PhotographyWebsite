@@ -137,8 +137,8 @@ document.addEventListener("DOMContentLoaded", function () {
         cards.forEach(card => {
             const photographerName = card.querySelector(".photographer h1").innerText.toLowerCase();
             const photographerInfo = card.querySelector(".photographer p").innerText.toLowerCase();
-
-            if (photographerName.includes(searchText) || photographerInfo.includes(searchText)) {
+            const photographerLocation = card.querySelector(".photographer h6").innerText.toLowerCase();
+            if (photographerName.includes(searchText) || photographerInfo.includes(searchText) || photographerLocation.includes(searchText)) {
                 card.style.display = "block";
             } else {
                 card.style.display = "none";
@@ -204,6 +204,7 @@ let moreClicked = false;
 more.forEach(option => {
     option.addEventListener("click", () => {
         moreClicked = !moreClicked;
+        
         console.log();
         if (moreClicked) {
             option.nextElementSibling.style.display = "flex";
@@ -211,6 +212,14 @@ more.forEach(option => {
         else {
             option.nextElementSibling.style.display = "none";
         }
+        // Adding focusout event listener
+        const focusoutHandler = () => {
+            option.nextElementSibling.style.display = "none";
+            moreClicked = false;
+            // option.removeEventListener("focusout", focusoutHandler);
+        };
+
+        option.addEventListener("focusout", focusoutHandler);
     });
 });
 
@@ -237,3 +246,40 @@ categories.forEach(category => {
 
     });
 });
+
+
+// Option list operations
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     const saveButtons = document.querySelectorAll(".option-list#save");
+//     let saveList = [];
+
+//     if (localStorage.getItem('savedItems')) {
+//         saveList = JSON.parse(localStorage.getItem('savedItems'));
+//         console.log("Items loaded from localStorage:", saveList);
+//     }
+
+//     saveButtons.forEach(function(button) {
+//         button.addEventListener("click", function() {
+//             const card = button.closest(".card");
+//             const cardHTML = card.outerHTML;
+//             saveList.push(cardHTML);
+//             localStorage.setItem('savedItems', JSON.stringify(saveList));
+//             console.log("Card saved:", saveList);
+
+//             // Load ab.html and insert the saved HTML content into the main div
+//             fetch('./ab.html')
+//                 .then(response => response.text())
+//                 .then(data => {
+//                     const parser = new DOMParser();
+//                     const htmlDoc = parser.parseFromString(data, 'text/html');
+//                     const mainDiv = htmlDoc.getElementById('main');
+//                     saveList.forEach(savedItem => {
+//                         mainDiv.innerHTML += savedItem;
+//                     });
+//                     document.body.innerHTML = htmlDoc.documentElement.innerHTML;
+//                 })
+//                 .catch(error => console.error('Error loading ab.html:', error));
+//         });
+//     });
+// });

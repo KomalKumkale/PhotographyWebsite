@@ -30,6 +30,8 @@ nav{
     z-index: 2000;
     
 }
+
+
 .navbar{
     width: 100%;
     height: 70px;
@@ -281,8 +283,12 @@ input[type="search"]::placeholder{
     right: 10px;
     font-size: 10px;
     font-weight: 600;
+    border-radius: 10px;
     background-color: var(--grey);
 }
+.profile-info #follow-button:hover{
+   scale: 1.1;
+ }
 
 
 
@@ -294,6 +300,64 @@ input[type="search"]::placeholder{
     gap: 20px;
     border-radius: 10px;
 }
+
+.post .add-post{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 10px 10px;
+    position: relative;
+    background-color:var(--white);
+}
+
+.add-post .upper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    /* padding: 0 10px; */
+    margin: 5px 0;
+}
+
+.add-post #profilepic{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    background-color: var(--grey);
+    border-radius: 50px;
+}
+
+.add-post #newpost{
+    border-radius: 25px;
+    width: 80%;
+    border: none;
+    background-color: var(--grey);
+    padding: 10px 10px;
+}
+
+.add-post .lower{
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.lower .post-icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.post-icons p{
+    font-size: 10px;
+    font-weight: 400;
+    padding-top: 2px;
+}
+
 
 .card{
     display: flex;
@@ -320,7 +384,7 @@ input[type="search"]::placeholder{
 }
 
 .photographer{
-    width: 70%;
+    width: 65%;
 }
 .photographer h1{
     font-size: 20px;
@@ -333,25 +397,34 @@ input[type="search"]::placeholder{
     color: var(--text-color);
 }
 
+.photographer h6{
+    padding: 5px 0;
+}
+
 #follow-button {
     color: #3399FF;
     font-family: "Helvetica";
     font-size: 10pt;
-    background-color: var(--grey);
+    background-color: var(--white);
     border: 1px solid;
     border-color: #3399FF;
-    border-radius: 3px;
+    border-radius: 8px;
     padding: 8px 15px;
     position: absolute;	 
-    top: 30px;
-    right: 25px;	
+    top: 20px;
+    right: 50px;	
     cursor: pointer;		    
   }
 
+  #follow-button:hover{
+    scale: 1.1;
+  }
+
   .more{
+    padding: 5px;
     position: absolute;
-    right: 10px ;
-    top: 30px;
+    right: 20px ;
+    top: 20px;
     cursor: pointer;
   }
 
@@ -362,7 +435,7 @@ input[type="search"]::placeholder{
     justify-content: center;
     padding: 10px 2px;
     border-radius: 5px;
-    width: 100px;
+    min-width: 100px;
     background-color: var(--grey);
     /* display: none; */
     position: absolute;
@@ -372,12 +445,17 @@ input[type="search"]::placeholder{
   }
 
   .option-list{
-    width: 80%;
-    padding: 0 5px;
+    min-width: 100%;
     border-radius: 5px;
     font-size: 14px;
     cursor: pointer;
-    
+    font-size: 12px;
+    font-weight: 400;
+    padding: 2px 5px;
+  }
+
+  .option-list i{
+    padding-right: 5px;
   }
 
   .option-list:hover{
@@ -532,7 +610,15 @@ input[type="search"]::placeholder{
 
 /* Media Queries */
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:1000px) {
+    .leftsec{
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width:830px) {
 
     .navbar{
         display: flex;
@@ -649,6 +735,9 @@ input[type="search"]::placeholder{
         position: absolute;
         top: 63px;
     }
+    .post-icons p{
+        display: none;
+      }
 }
 
 @media screen and (max-width:300px) {
@@ -660,6 +749,9 @@ input[type="search"]::placeholder{
         width: 50px;
         height: 50px;
     }
+
+    
+    
     
 }
 

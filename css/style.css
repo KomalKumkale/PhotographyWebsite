@@ -249,9 +249,12 @@ input[type="search"]::placeholder{
 }
 
 .popular-profile img{
-    height: 40px;
+    height: 50px;
+    width:50px ;
     border-radius: 50%;
+    object-fit: cover;
     border: 1px solid var(--border);
+    
 }
 
 .profile-info{
@@ -323,11 +326,12 @@ input[type="search"]::placeholder{
 }
 
 .add-post #profilepic{
-    width: 40px;
-    height: 40px;
-    padding: 5px;
+    width: 50px;
+    height: 50px;
+    padding: 2px;
     background-color: var(--grey);
     border-radius: 50px;
+    object-fit: cover;
 }
 
 .add-post #newpost{
@@ -336,6 +340,7 @@ input[type="search"]::placeholder{
     border: none;
     background-color: var(--grey);
     padding: 10px 10px;
+    color: var(--text-color);
 }
 
 .add-post .lower{
@@ -380,7 +385,7 @@ input[type="search"]::placeholder{
     height: 50px;
     width: 50px;
     border-radius: 50%;
-
+    object-fit: cover;
 }
 
 .photographer{
@@ -470,6 +475,13 @@ input[type="search"]::placeholder{
     color: var(--text-color);
     }
 
+    .post-text .hashtags{
+        display: block;
+        color: #3399FF;
+    }
+
+
+
 .post-image{
     width: 100%;
     padding: 10px 0;
@@ -489,17 +501,29 @@ input[type="search"]::placeholder{
     justify-content: space-around;
 }
 
+.card .fa-heart{
+    transition: all 0.2s ease;
+}
+
 .card .icons{
     display: flex;
     align-items: center;
     justify-content: center;
     /* font-size: 12px; */
 }
+
+.card .icons i{
+    cursor: pointer;
+}
+
 .options .count{
     padding-left: 5px;
     font-size: 14px;
     color: var(--text);
+    cursor: default;
 }
+
+
 
 
 
@@ -523,6 +547,7 @@ input[type="search"]::placeholder{
     border-radius: 10px;
     position: sticky;
     top: 100px;
+    z-index: 900;
 }
 
 #category{
@@ -541,18 +566,30 @@ input[type="search"]::placeholder{
 
 }
 
+#category a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+#category a:hover{
+    text-decoration: none;
+    color: var(--text-color);
+    
+}
 .category{
     width: 100%;
-    background-color:var(--back);
+    background-color:var(--text-color);
     border-radius: 5px;
     margin: 5px 0;
     padding: 5px 5px;
     font-size: 14px;
     font-weight: 500;
-    /* color: var(--white); */
+    text-decoration: none;
+    color: var(--grey);
     cursor: pointer;
 }
-
+.category:hover{
+    transform: scaleY(1.1);
+}
 .reviews{
     max-height: 40vh;
     width: 300px;
@@ -579,7 +616,9 @@ input[type="search"]::placeholder{
 }
 .review img{
     height: 40px;
+    width: 40px;
     border-radius: 50%;
+    object-fit: cover;
     border: 1px solid var(--border);
 }
 

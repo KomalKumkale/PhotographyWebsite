@@ -200,12 +200,17 @@ main {
     margin-top: 20px;
 }
 
+.asideUl a{
+    text-decoration: none;
+    width: 90%;
+    color: var(--text-color);
+}
 .asideUl li {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 5px 20px;
-    width: 90%;
+    width: 100%;
     cursor: pointer;
     border-radius: 4px;
     font-family: 'Segoe UI',Helvetica,Arial,sans-serif;
@@ -252,6 +257,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.asideList{
+    display: flex;
+    width: fit-content;
 }
 
 .asideListDevider {
